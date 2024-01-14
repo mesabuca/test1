@@ -1,0 +1,21 @@
+<!--<h1>New author</h1>-->
+
+<%#= render "form", author: @author %>
+
+<!--<br>-->
+
+<!--<div>-->
+  <%#= link_to "Back to authors", authors_path %>
+<!--</div>-->
+
+<main class="container">
+  <%= link_to sanitize("&larr; Back to quotes"), authors_path %>
+
+  <div class="header">
+    <h1>New Author</h1>
+  </div>
+
+  <%= turbo_frame_tag "second_frame" do %>
+    <%= render "form", author: @author %>
+  <% end %>
+</main>
